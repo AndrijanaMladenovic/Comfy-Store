@@ -8,10 +8,6 @@ import { toggleTheme } from "../features/user/userSlice";
 function Navbar() {
   const dispatch = useDispatch();
 
-  const handleTheme = () => {
-    dispatch(toggleTheme());
-  };
-
   const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
   return (
@@ -41,12 +37,6 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end">
-          <label className="swap swap-rotate">
-            <input type="checkbox" onChange={handleTheme} />
-            <BsSunFill className="swap-on h-4 w-4" />
-            <BsMoonFill className="swap-off h-4 w-4" />
-          </label>
-
           <NavLink to="cart" className="btn btn-ghost btn-circle btn-md ml-4">
             <div className="indicator">
               <BsCart3 className="h-6 w-6" />
